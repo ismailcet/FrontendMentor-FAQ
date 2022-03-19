@@ -39,10 +39,6 @@ body {
   border-radius: 2rem;
   max-width: 56rem;
   margin: 3rem;
-  background-image: url(images/bg-pattern-desktop.svg);
-  background-size: 45%;
-  background-repeat: no-repeat;
-  background-position: -13% center;
 }
 .card__image img {
   width: 100%;
@@ -56,6 +52,10 @@ body {
   .card {
     display: flex;
     margin: 6rem auto;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: -13% center;
   }
 
   .card__image,
