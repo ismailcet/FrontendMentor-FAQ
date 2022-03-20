@@ -15,6 +15,7 @@
   --clr-Light-grayish-blue: hsl(240, 5%, 91%);
   --ff--primary: "Kumbh Sans", sans-serif;
   --radius: 1rem;
+  --transition: all 0.5s linear;
 }
 
 /* Global Styles */
@@ -41,7 +42,7 @@ body {
   max-width: 56rem;
   background-image: url(images/bg-pattern-mobile.svg);
   background-repeat: no-repeat;
-  background-position: center 0%;
+  background-position: center 1%;
   background-size: 15rem;
 }
 .card__box {
@@ -66,14 +67,70 @@ body {
   margin: auto;
 }
 .card__text {
-  padding-top: 8.25rem;
+  padding-top: 8.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 2.5rem;
+}
+.card__questions h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--clr-Very-dark-desaturated-blue);
+  margin-bottom: 2.5rem;
+}
+/* Question */
+.question:not(.question:last-child) {
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+.question__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  color: var(--clr-Very-dark-grayish-blue);
+  font-size: 13px;
+  font-weight: 400;
+  flex: 2;
+  max-width: 240px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.title:hover {
+  color: var(--clr-Soft-red);
+}
+.arrow {
+  width: 10px;
+  height: 10px;
+  transition: var(--transition);
+}
+.active {
+  font-size: 15px;
+  color: var(--clr-Very-dark-desaturated-blue) !important;
+  font-weight: 700 !important;
+}
+.active__arrow {
+  transform: rotate(180deg);
+}
+.answer {
+  display: none;
+  margin-top: 10px;
+  font-size: 12px;
+  padding-right: 1rem;
+  color: var(--clr-Dark-grayish-blue);
+  transition: var(--transition);
+}
+.answer__active {
+  display: block;
 }
 /* Responsive Card */
-@media screen and (min-width: 56em) {
+@media screen and (min-width: 50em) {
   .card {
     position: relative;
     display: flex;
-    margin: 6rem auto;
+    margin: 8rem auto;
     background-image: url(images/bg-pattern-desktop.svg);
     background-size: 45%;
     background-repeat: no-repeat;
@@ -97,12 +154,15 @@ body {
     transform: translateX(-4rem) translateY(-50%);
     max-width: 25rem;
   }
-  .card__text {
-    padding-top: 0;
-  }
   .card__image,
   .card__text {
     flex: 1;
   }
   /* Text */
+  .card__text {
+    padding: 4rem;
+  }
+  .card__questions h1 {
+    text-align: left;
+  }
 }
